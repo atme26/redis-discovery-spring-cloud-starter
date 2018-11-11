@@ -1,6 +1,5 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.huaching.starter.redis.discovery.config.RedisRegistryAutoConfiguration,\
-org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration
+com.huaching.starter.redis.discovery.config.RedisRegistryAutoConfiguration
 
 org.springframework.cloud.bootstrap.BootstrapConfiguration=\
 com.huaching.starter.redis.discovery.config.RedisDiscoveryClientConfigServiceBootstrapConfiguration

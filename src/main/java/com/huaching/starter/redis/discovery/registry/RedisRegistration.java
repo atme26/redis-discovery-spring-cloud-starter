@@ -4,8 +4,10 @@ import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.URI;
 import java.util.Enumeration;
+import java.util.HashMap;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.DefaultServiceInstance;
 import org.springframework.cloud.client.serviceregistry.Registration;
 
 /**
@@ -65,12 +67,13 @@ public class RedisRegistration implements Registration {
 
     @Override
     public URI getUri() {
-        return null;
+        return DefaultServiceInstance.getUri(this);
     }
 
     @Override
     public Map<String, String> getMetadata() {
-        return null;
+        //todo
+        return new HashMap<>();
     }
 
 

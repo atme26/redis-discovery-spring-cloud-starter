@@ -8,6 +8,7 @@ import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.boot.autoconfigure.data.redis.RedisAutoConfiguration;
 import org.springframework.boot.autoconfigure.data.redis.RedisRepositoriesAutoConfiguration;
 import org.springframework.cloud.client.CommonsClientAutoConfiguration;
 import org.springframework.cloud.client.discovery.noop.NoopDiscoveryClientAutoConfiguration;
@@ -24,6 +25,7 @@ import org.springframework.context.annotation.Configuration;
 @ConditionalOnProperty(value = "spring.redis.registry.enabled", matchIfMissing = true)
 @AutoConfigureBefore({NoopDiscoveryClientAutoConfiguration.class,
     CommonsClientAutoConfiguration.class, ServiceRegistryAutoConfiguration.class })
+@AutoConfigureAfter(RedisAutoConfiguration.class)
 public class RedisRegistryAutoConfiguration {
 
     @Bean
